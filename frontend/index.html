@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusAI — Your Intelligent Chat Suite</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===================== LANDING PAGE ===================== -->
+<div id="page-landing" class="page active">
+  <div class="landing-bg">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+    <div class="grain"></div>
+  </div>
+  <nav class="nav">
+    <div class="nav-logo"><span class="logo-icon">⬡</span><span class="logo-text">NexusAI</span></div>
+    <div class="nav-links">
+      <a href="#bots-section" class="nav-link">Assistants</a>
+      <a href="#features-section" class="nav-link">Features</a>
+      <button class="btn-outline" id="nav-login-btn">Sign In</button>
+      <button class="btn-primary" id="nav-signup-btn">Get Started</button>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="hero-badge"><span class="badge-dot"></span>Powered by Groq + Llama 3</div>
+    <h1 class="hero-title">Intelligence.<br /><em>Reimagined.</em></h1>
+    <p class="hero-subtitle">Five expert AI assistants — each mastered in their domain. From trading floors to gym floors, NexusAI brings elite-level intelligence to every conversation.</p>
+    <div class="hero-actions">
+      <button class="btn-hero" id="hero-start-btn">Begin Your Journey</button>
+      <button class="btn-ghost" id="hero-explore-btn">Explore Assistants ↓</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Expert Domains</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Conversations</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Availability</span></div>
+    </div>
+  </section>
+  <section class="bots-section" id="bots-section">
+    <div class="section-header">
+      <p class="section-eyebrow">Your Expert Panel</p>
+      <h2 class="section-title">Choose Your <em>Advisor</em></h2>
+      <p class="section-desc">Each assistant is trained specifically for its domain, delivering expert-level guidance tailored to your needs.</p>
+    </div>
+    <div class="bots-grid">
+      <div class="bot-card" data-bot="fitness"><div class="bot-card-glow"></div><div class="bot-card-header"><div class="bot-avatar bot-avatar--fitness"><span class="bot-icon">⚡</span></div><div class="bot-tag">Fitness & Wellness</div></div><h3 class="bot-name">FitCoach</h3><p class="bot-desc">Your personal trainer and nutrition advisor. Get workout plans, diet strategies, recovery tips, and mental fitness guidance.</p><div class="bot-skills"><span class="skill-tag">Workouts</span><span class="skill-tag">Nutrition</span><span class="skill-tag">Recovery</span></div><button class="bot-cta" data-bot="fitness">Chat with FitCoach →</button></div>
+      <div class="bot-card" data-bot="trading"><div class="bot-card-glow"></div><div class="bot-card-header"><div class="bot-avatar bot-avatar--trading"><span class="bot-icon">📈</span></div><div class="bot-tag">Stocks & Trading</div></div><h3 class="bot-name">TradePilot</h3><p class="bot-desc">Your market intelligence partner. Trading strategies, portfolio analysis, risk management, and financial instruments.</p><div class="bot-skills"><span class="skill-tag">Markets</span><span class="skill-tag">Portfolio</span><span class="skill-tag">Risk Mgmt</span></div><button class="bot-cta" data-bot="trading">Chat with TradePilot →</button></div>
+      <div class="bot-card" data-bot="study"><div class="bot-card-glow"></div><div class="bot-card-header"><div class="bot-avatar bot-avatar--study"><span class="bot-icon">🎓</span></div><div class="bot-tag">Academic Assistant</div></div><h3 class="bot-name">StudyMate</h3><p class="bot-desc">Your academic excellence partner. Complex topics, essay writing, exam prep, and deep concept explanations across all subjects.</p><div class="bot-skills"><span class="skill-tag">Exam Prep</span><span class="skill-tag">Research</span><span class="skill-tag">Essays</span></div><button class="bot-cta" data-bot="study">Chat with StudyMate →</button></div>
+      <div class="bot-card" data-bot="business"><div class="bot-card-glow"></div><div class="bot-card-header"><div class="bot-avatar bot-avatar--business"><span class="bot-icon">💼</span></div><div class="bot-tag">Business Strategy</div></div><h3 class="bot-name">BizMentor</h3><p class="bot-desc">Your C-suite level advisor. Startup strategy, marketing plans, scaling techniques, investor pitches, and competitive analysis.</p><div class="bot-skills"><span class="skill-tag">Strategy</span><span class="skill-tag">Marketing</span><span class="skill-tag">Startups</span></div><button class="bot-cta" data-bot="business">Chat with BizMentor →</button></div>
+      <div class="bot-card featured" data-bot="wellness"><div class="bot-card-glow"></div><div class="featured-badge">✦ Featured</div><div class="bot-card-header"><div class="bot-avatar bot-avatar--wellness"><span class="bot-icon">🧘</span></div><div class="bot-tag">Mind & Lifestyle</div></div><h3 class="bot-name">ZenGuide</h3><p class="bot-desc">Your holistic life coach. Mindfulness, stress management, habit building, personal growth, and emotional intelligence.</p><div class="bot-skills"><span class="skill-tag">Mindfulness</span><span class="skill-tag">Habits</span><span class="skill-tag">Growth</span></div><button class="bot-cta" data-bot="wellness">Chat with ZenGuide →</button></div>
+    </div>
+  </section>
+  <section class="features-section" id="features-section">
+    <div class="section-header"><p class="section-eyebrow">Why NexusAI</p><h2 class="section-title">Built for <em>Excellence</em></h2></div>
+    <div class="features-grid">
+      <div class="feature-item"><div class="feature-icon">⚙️</div><h4>Domain Intelligence</h4><p>Each bot is fine-tuned with domain expertise, delivering precise contextual answers.</p></div>
+      <div class="feature-item"><div class="feature-icon">💾</div><h4>Persistent History</h4><p>All conversations saved locally — pick up right where you left off, anytime.</p></div>
+      <div class="feature-item"><div class="feature-icon">👤</div><h4>Personal Dashboard</h4><p>Track your activity, manage all assistants, and customize your experience.</p></div>
+      <div class="feature-item"><div class="feature-icon">⚡</div><h4>Instant Responses</h4><p>Powered by Groq's ultra-fast inference — near-instant AI replies every time.</p></div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-logo"><span class="logo-icon">⬡</span><span class="logo-text">NexusAI</span></div>
+    <p class="footer-copy">© 2025 NexusAI. Intelligence, delivered.</p>
+  </footer>
+</div>
+
+<!-- ===================== AUTH MODAL ===================== -->
+<div id="auth-modal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn">✕</button>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-login">Sign In</button>
+      <button class="modal-tab" id="tab-signup">Sign Up</button>
+    </div>
+    <div id="form-login" class="auth-form active">
+      <div class="modal-logo"><span class="logo-icon">⬡</span> NexusAI</div>
+      <p class="modal-subtitle">Welcome back. Sign in to continue.</p>
+      <div class="input-group"><label>Email Address</label><input type="email" id="login-email" placeholder="you@example.com" /></div>
+      <div class="input-group"><label>Password</label><input type="password" id="login-password" placeholder="••••••••" /></div>
+      <button class="btn-primary full-width" id="login-btn">Sign In</button>
+      <p class="auth-switch">Don't have an account? <span id="switch-to-signup">Sign up</span></p>
+    </div>
+    <div id="form-signup" class="auth-form">
+      <div class="modal-logo"><span class="logo-icon">⬡</span> NexusAI</div>
+      <p class="modal-subtitle">Join and start chatting with AI experts.</p>
+      <div class="input-group"><label>Full Name</label><input type="text" id="signup-name" placeholder="Jane Doe" /></div>
+      <div class="input-group"><label>Email Address</label><input type="email" id="signup-email" placeholder="you@example.com" /></div>
+      <div class="input-group"><label>Password</label><input type="password" id="signup-password" placeholder="At least 6 characters" /></div>
+      <button class="btn-primary full-width" id="signup-btn">Create Account</button>
+      <p class="auth-switch">Already have an account? <span id="switch-to-login">Sign in</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== DASHBOARD PAGE ===================== -->
+<div id="page-dashboard" class="page">
+  <nav class="app-nav">
+    <div class="nav-logo"><span class="logo-icon">⬡</span><span class="logo-text">NexusAI</span></div>
+    <div class="app-nav-links">
+      <button class="app-nav-btn active" data-page="dashboard">⊞ Dashboard</button>
+      <button class="app-nav-btn" data-page="chat">💬 Chat</button>
+    </div>
+    <div class="app-nav-right">
+      <button class="user-pill" id="dash-profile-btn">
+        <div class="user-pill-avatar" id="dash-avatar">J</div>
+        <span id="dash-username">Jane</span>
+        <span class="pill-arrow">›</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="dashboard-body">
+    <!-- Greeting Banner -->
+    <div class="dash-greeting">
+      <div class="dash-greeting-text">
+        <p class="greeting-eyebrow" id="greeting-time">Good morning</p>
+        <h1 class="greeting-name">Welcome back, <span id="greeting-username">Jane</span> 👋</h1>
+        <p class="greeting-sub">What would you like to explore today?</p>
+      </div>
+      <div class="dash-greeting-art">
+        <div class="greeting-orb"></div>
+        <span class="greeting-icon">⬡</span>
+      </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--fitness-bg);color:var(--fitness-color)">💬</div>
+        <div class="stat-card-info">
+          <span class="stat-card-num" id="stat-total-msgs">0</span>
+          <span class="stat-card-label">Total Messages</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--trading-bg);color:var(--trading-color)">🤖</div>
+        <div class="stat-card-info">
+          <span class="stat-card-num" id="stat-bots-used">0</span>
+          <span class="stat-card-label">Bots Used</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--study-bg);color:var(--study-color)">📅</div>
+        <div class="stat-card-info">
+          <span class="stat-card-num" id="stat-days">1</span>
+          <span class="stat-card-label">Days Active</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--wellness-bg);color:var(--wellness-color)">⚡</div>
+        <div class="stat-card-info">
+          <span class="stat-card-num" id="stat-today">0</span>
+          <span class="stat-card-label">Today's Chats</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Assistants Grid -->
+    <div class="dash-section">
+      <div class="dash-section-header">
+        <h2 class="dash-section-title">Your AI Assistants</h2>
+        <p class="dash-section-sub">Click any assistant to start or continue a conversation</p>
+      </div>
+      <div class="dash-bots-grid">
+        <div class="dash-bot-card" data-bot="fitness">
+          <div class="dash-bot-top">
+            <div class="dash-bot-icon bot-avatar--fitness">⚡</div>
+            <div class="dash-bot-badge" id="badge-fitness">0 chats</div>
+          </div>
+          <h3 class="dash-bot-name">FitCoach</h3>
+          <p class="dash-bot-desc">Fitness & Wellness</p>
+          <div class="dash-bot-last" id="last-fitness">No conversations yet</div>
+          <button class="dash-bot-btn">Open Chat →</button>
+        </div>
+        <div class="dash-bot-card" data-bot="trading">
+          <div class="dash-bot-top">
+            <div class="dash-bot-icon bot-avatar--trading">📈</div>
+            <div class="dash-bot-badge" id="badge-trading">0 chats</div>
+          </div>
+          <h3 class="dash-bot-name">TradePilot</h3>
+          <p class="dash-bot-desc">Stocks & Trading</p>
+          <div class="dash-bot-last" id="last-trading">No conversations yet</div>
+          <button class="dash-bot-btn">Open Chat →</button>
+        </div>
+        <div class="dash-bot-card" data-bot="study">
+          <div class="dash-bot-top">
+            <div class="dash-bot-icon bot-avatar--study">🎓</div>
+            <div class="dash-bot-badge" id="badge-study">0 chats</div>
+          </div>
+          <h3 class="dash-bot-name">StudyMate</h3>
+          <p class="dash-bot-desc">Academic Assistant</p>
+          <div class="dash-bot-last" id="last-study">No conversations yet</div>
+          <button class="dash-bot-btn">Open Chat →</button>
+        </div>
+        <div class="dash-bot-card" data-bot="business">
+          <div class="dash-bot-top">
+            <div class="dash-bot-icon bot-avatar--business">💼</div>
+            <div class="dash-bot-badge" id="badge-business">0 chats</div>
+          </div>
+          <h3 class="dash-bot-name">BizMentor</h3>
+          <p class="dash-bot-desc">Business Strategy</p>
+          <div class="dash-bot-last" id="last-business">No conversations yet</div>
+          <button class="dash-bot-btn">Open Chat →</button>
+        </div>
+        <div class="dash-bot-card" data-bot="wellness">
+          <div class="dash-bot-top">
+            <div class="dash-bot-icon bot-avatar--wellness">🧘</div>
+            <div class="dash-bot-badge" id="badge-wellness">0 chats</div>
+          </div>
+          <h3 class="dash-bot-name">ZenGuide</h3>
+          <p class="dash-bot-desc">Mind & Lifestyle</p>
+          <div class="dash-bot-last" id="last-wellness">No conversations yet</div>
+          <button class="dash-bot-btn">Open Chat →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Conversations -->
+    <div class="dash-section">
+      <div class="dash-section-header">
+        <h2 class="dash-section-title">Recent Conversations</h2>
+        <button class="dash-section-link" id="dash-clear-all-btn">Clear All History</button>
+      </div>
+      <div class="recent-list" id="recent-conversations">
+        <div class="recent-empty">No conversations yet. Pick an assistant above to get started!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CHAT PAGE ===================== -->
+<div id="page-chat" class="page">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo"><span class="logo-icon">⬡</span><span class="logo-text">NexusAI</span></div>
+    </div>
+    <div class="user-profile">
+      <div class="user-avatar" id="chat-user-avatar">J</div>
+      <div class="user-info">
+        <span class="user-name" id="chat-user-name">Jane Doe</span>
+        <span class="user-plan">Free Plan</span>
+      </div>
+    </div>
+    <nav class="bot-nav">
+      <p class="nav-section-label">Assistants</p>
+      <button class="bot-nav-item" data-bot="fitness"><span class="bot-nav-icon bot-nav-icon--fitness">⚡</span><div class="bot-nav-info"><span class="bot-nav-name">FitCoach</span><span class="bot-nav-sub">Fitness & Wellness</span></div><span class="bot-nav-count" id="nav-count-fitness"></span></button>
+      <button class="bot-nav-item" data-bot="trading"><span class="bot-nav-icon bot-nav-icon--trading">📈</span><div class="bot-nav-info"><span class="bot-nav-name">TradePilot</span><span class="bot-nav-sub">Stocks & Trading</span></div><span class="bot-nav-count" id="nav-count-trading"></span></button>
+      <button class="bot-nav-item" data-bot="study"><span class="bot-nav-icon bot-nav-icon--study">🎓</span><div class="bot-nav-info"><span class="bot-nav-name">StudyMate</span><span class="bot-nav-sub">Academic</span></div><span class="bot-nav-count" id="nav-count-study"></span></button>
+      <button class="bot-nav-item" data-bot="business"><span class="bot-nav-icon bot-nav-icon--business">💼</span><div class="bot-nav-info"><span class="bot-nav-name">BizMentor</span><span class="bot-nav-sub">Business</span></div><span class="bot-nav-count" id="nav-count-business"></span></button>
+      <button class="bot-nav-item" data-bot="wellness"><span class="bot-nav-icon bot-nav-icon--wellness">🧘</span><div class="bot-nav-info"><span class="bot-nav-name">ZenGuide</span><span class="bot-nav-sub">Mind & Life</span></div><span class="bot-nav-count" id="nav-count-wellness"></span></button>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="sidebar-action" id="sidebar-dashboard-btn"><span>⊞</span> Dashboard</button>
+      <button class="sidebar-action" id="sidebar-profile-btn"><span>👤</span> Profile</button>
+      <button class="sidebar-action" id="clear-history-btn"><span>🗑</span> Clear This Chat</button>
+      <button class="sidebar-action logout-action" id="logout-btn"><span>→</span> Sign Out</button>
+    </div>
+  </aside>
+
+  <main class="chat-main">
+    <header class="chat-header">
+      <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+      <div class="chat-bot-info">
+        <div class="chat-bot-avatar" id="chat-bot-avatar">⚡</div>
+        <div>
+          <h2 class="chat-bot-name" id="chat-bot-name">FitCoach</h2>
+          <p class="chat-bot-status"><span class="status-dot"></span> Online & Ready</p>
+        </div>
+      </div>
+      <div class="chat-header-actions">
+        <button class="header-btn" id="new-chat-btn">✦ New Chat</button>
+      </div>
+    </header>
+    <div class="welcome-screen" id="welcome-screen">
+      <div class="welcome-avatar" id="welcome-avatar">⚡</div>
+      <h2 class="welcome-title" id="welcome-title">Hey, I'm FitCoach!</h2>
+      <p class="welcome-desc" id="welcome-desc">Your personal trainer and nutrition advisor.</p>
+      <div class="starter-prompts" id="starter-prompts"></div>
+    </div>
+    <div class="messages-container hidden" id="messages-container"></div>
+    <div class="input-area">
+      <div class="input-wrapper">
+        <textarea id="chat-input" class="chat-input" placeholder="Ask anything..." rows="1"></textarea>
+        <button class="send-btn" id="send-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </div>
+      <p class="input-note">NexusAI may produce inaccurate information. Verify important decisions with a professional.</p>
+    </div>
+  </main>
+</div>
+
+<!-- ===================== PROFILE PAGE ===================== -->
+<div id="page-profile" class="page">
+  <nav class="app-nav">
+    <div class="nav-logo"><span class="logo-icon">⬡</span><span class="logo-text">NexusAI</span></div>
+    <div class="app-nav-links">
+      <button class="app-nav-btn" data-page="dashboard">⊞ Dashboard</button>
+      <button class="app-nav-btn" data-page="chat">💬 Chat</button>
+    </div>
+    <div class="app-nav-right">
+      <button class="user-pill active" id="profile-nav-btn">
+        <div class="user-pill-avatar" id="profile-nav-avatar">J</div>
+        <span id="profile-nav-name">Jane</span>
+        <span class="pill-arrow">›</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="profile-body">
+    <!-- Profile Hero -->
+    <div class="profile-hero">
+      <div class="profile-avatar-big" id="profile-avatar-big">J</div>
+      <div class="profile-hero-info">
+        <h1 class="profile-hero-name" id="profile-hero-name">Jane Doe</h1>
+        <p class="profile-hero-email" id="profile-hero-email">jane@example.com</p>
+        <p class="profile-hero-since">Member since <span id="profile-since">2025</span></p>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <!-- Account Settings -->
+      <div class="profile-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">👤</span>
+          <h3 class="profile-card-title">Account Settings</h3>
+        </div>
+        <div class="input-group"><label>Full Name</label><input type="text" id="profile-name-input" placeholder="Your name" /></div>
+        <div class="input-group"><label>Email Address</label><input type="email" id="profile-email-input" placeholder="your@email.com" /></div>
+        <div class="input-group"><label>New Password <span class="optional-label">(leave blank to keep current)</span></label><input type="password" id="profile-password-input" placeholder="New password" /></div>
+        <button class="btn-primary profile-save-btn" id="save-account-btn">Save Changes</button>
+      </div>
+
+      <!-- Preferences -->
+      <div class="profile-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">⚙️</span>
+          <h3 class="profile-card-title">Preferences</h3>
+        </div>
+        <div class="input-group">
+          <label>Default Assistant</label>
+          <select id="pref-default-bot" class="styled-select">
+            <option value="fitness">⚡ FitCoach — Fitness & Wellness</option>
+            <option value="trading">📈 TradePilot — Stocks & Trading</option>
+            <option value="study">🎓 StudyMate — Academic</option>
+            <option value="business">💼 BizMentor — Business</option>
+            <option value="wellness">🧘 ZenGuide — Mind & Life</option>
+          </select>
+        </div>
+        <div class="pref-toggle-row">
+          <div class="pref-toggle-info">
+            <span class="pref-toggle-label">Show starter prompts</span>
+            <span class="pref-toggle-sub">Show quick prompts on new chats</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="pref-starter-prompts" checked />
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <button class="btn-primary profile-save-btn" id="save-prefs-btn">Save Preferences</button>
+      </div>
+
+      <!-- Chat Statistics -->
+      <div class="profile-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">📊</span>
+          <h3 class="profile-card-title">Your Statistics</h3>
+        </div>
+        <div class="stats-breakdown" id="stats-breakdown">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- Danger Zone -->
+      <div class="profile-card danger-card">
+        <div class="profile-card-header">
+          <span class="profile-card-icon">⚠️</span>
+          <h3 class="profile-card-title danger-title">Danger Zone</h3>
+        </div>
+        <div class="danger-item">
+          <div class="danger-info">
+            <p class="danger-item-title">Clear All Chat History</p>
+            <p class="danger-item-desc">Permanently delete all conversations across all assistants.</p>
+          </div>
+          <button class="btn-danger-outline" id="profile-clear-history-btn">Clear History</button>
+        </div>
+        <div class="danger-divider"></div>
+        <div class="danger-item">
+          <div class="danger-info">
+            <p class="danger-item-title">Delete Account</p>
+            <p class="danger-item-desc">Permanently delete your account, profile, and all data. This cannot be undone.</p>
+          </div>
+          <button class="btn-danger" id="delete-account-btn">Delete Account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONFIRM MODAL ===================== -->
+<div id="confirm-modal" class="modal-overlay hidden">
+  <div class="modal-box confirm-box">
+    <div class="confirm-icon" id="confirm-icon">⚠️</div>
+    <h3 class="confirm-title" id="confirm-title">Are you sure?</h3>
+    <p class="confirm-desc" id="confirm-desc">This action cannot be undone.</p>
+    <div class="confirm-actions">
+      <button class="btn-outline" id="confirm-cancel-btn">Cancel</button>
+      <button class="btn-danger" id="confirm-ok-btn">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
