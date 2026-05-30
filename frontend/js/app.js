@@ -1,14 +1,8 @@
-/* =========================================
-   NEXUSAI — APP.JS v2
-   Dashboard | Chat | Profile | History
-   ========================================= */
 
-// ---- BACKEND URL ----
-// Change this to your Render URL after deployment
-// e.g. const API_BASE_URL = 'https://nexusai-backend.onrender.com';
+const API_BASE_URL = 'https://nexusai-backend-9bop.onrender.com';
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:5000'
-  : 'https://nexusai-backend.onrender.com'; // ← update after Render deploy
+  : 'https://nexusai-backend-9bop.onrender.com';
 
 // ---- BOT CONFIG ----
 const BOTS = {
