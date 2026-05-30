@@ -1,7 +1,7 @@
 
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:5000'
-  : 'https://nexusai-backend-9bop.onrender.com';
+  : 'https://nexusai-backend-9bop.onrender.com'; // ← update after Render deploy
 
 // ---- BOT CONFIG ----
 const BOTS = {
@@ -140,8 +140,11 @@ function bindAllEvents() {
   q('#switch-to-login').onclick  = () => switchAuthTab('login');
   q('#login-btn').onclick   = handleLogin;
   q('#signup-btn').onclick  = handleSignup;
-  [q('#login-email'),q('#login-password')].forEach(el => el.onkeydown = e => e.key==='Enter' && handleLogin());
-  [q('#signup-name'),q('#signup-email'),q('#signup-password')].forEach(el => el.onkeydown = e => e.key==='Enter' && handleSignup());
+  q('#login-email').addEventListener('keydown', e => { if(e.key==='Enter') handleLogin(); });
+  q('#login-password').addEventListener('keydown', e => { if(e.key==='Enter') handleLogin(); });
+  q('#signup-name').addEventListener('keydown', e => { if(e.key==='Enter') handleSignup(); });
+  q('#signup-email').addEventListener('keydown', e => { if(e.key==='Enter') handleSignup(); });
+  q('#signup-password').addEventListener('keydown', e => { if(e.key==='Enter') handleSignup(); });
 
   // Dashboard
   q('#dash-profile-btn').onclick = () => showPage('profile');
@@ -409,16 +412,18 @@ async function handleSend() {
 }
 
 async function callBackendAPI(botId, history) {
+  // Only send last 20 messages as context to keep request size small
   const contextHistory = history.slice(-20).map(m => ({
     role:    m.role === 'bot' ? 'assistant' : m.role,
     content: m.content
   }));
 
+  // Remove the last user message from history since we send it separately
   const lastUserMsg = contextHistory.pop();
 
   let response;
   try {
-    response = await window.fetch(`${API_BASE_URL}/api/chat/ask`, {
+    response = await fetch(`${API_BASE_URL}/api/chat/ask`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
