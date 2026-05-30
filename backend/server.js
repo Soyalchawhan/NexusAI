@@ -20,7 +20,12 @@ const httpServer = http.createServer(app);
 // ---- Socket.io Setup ----
 const io = new Server(httpServer, {
   cors: {
-    origin: ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500'],
+    origin: [
+      'http://localhost:3000',
+      'http://127.0.0.1:5500',
+      'http://localhost:5500',
+      'https://nexus-ai-phi-hazel.vercel.app'
+    ],
     methods: ['GET', 'POST'],
     credentials: true
   }
@@ -33,7 +38,12 @@ connectDB();
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:5500', 'http://localhost:5500','nexus-ai-phi-hazel.vercel.app'],
+  origin: [
+    'http://localhost:3000',
+    'http://127.0.0.1:5500',
+    'http://localhost:5500',
+    'https://nexus-ai-phi-hazel.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json({ limit: '10kb' }));
