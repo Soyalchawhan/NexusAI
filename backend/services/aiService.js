@@ -20,6 +20,9 @@ const SYSTEM_PROMPTS = {
  * @param {Array}  history - [{ role: 'user'|'assistant', content: string }]
  */
 exports.getResponse = async (botType, history) => {
+  console.log('GROQ KEY starts with:', process.env.GROQ_API_KEY?.substring(0, 8));
+  // ... rest of function
+exports.getResponse = async (botType, history) => {
   const systemPrompt = SYSTEM_PROMPTS[botType];
   if (!systemPrompt) throw new Error(`Unknown bot type: ${botType}`);
 
